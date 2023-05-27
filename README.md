@@ -2,7 +2,13 @@
 
 ### 'Hello Django'-Walkthrough Project
 
+`path('hello/', say_hello, name="hello")` - Django function located in the urls.py, 'hello/' is a '/hello' after the html that triggers the 'say_hello' function, name is the name of the url where function is executed
 `python3 manage.py runserver` - cmd to run the app on the server
+`HttpResponse`- A Django dfunction that takes a http request and prints a string as a response
+
+# Templates
+`render` -  a Django function that takes two arguments (request, 'directory'), where 'request' is the http request that triggers the file in the folder directory.
+`path('', get_todo_list, name="get_todo_list")` - Django function located in the urls.py, '' is where the url that triggers the function goes, central value is the function it calls, and the last parameter is the name of the url.
 
 
 ## Codeanywhere Reminders

@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from todo.views import say_hello#import say_hello url
+from todo.views import get_todo_list #import say_hello url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/', say_hello, name="hello")#define here the url that is going to trigger the url
+    path('', get_todo_list, name="get_todo_list") #define here the url that is going to trigger the url
 ]
