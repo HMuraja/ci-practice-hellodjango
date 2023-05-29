@@ -58,6 +58,10 @@
     - On each loop add one `<tr>` with two cells `<td>`
     - Add `{% empty %}` in the end before endfor, whatever is added on th html is diplayed if no todo items
 
+### Modifying Data
+- Form needs to be validated, use Django.form instead to build the form for easy access
+- How to edit the data
+
 ## Codeanywhere Reminders
 - `todo_list.html` todo represents th read operation in CRUD, each operations should have it's own html
 - `{% crf_token %}` = a csrf(cross-site request forgery token), a hidden input field value that verifys that data coming from this todo list app
