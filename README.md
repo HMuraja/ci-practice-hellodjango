@@ -44,10 +44,23 @@
     - this is because of the class inheritance, seethe string method `__str__` method in **django.db.models.base**
     - Override the string method in the item class `_str__(self): return seld.name`
 
-
-
+### Rendering Data
+- Create the connection for the data and the user view:
+    - in **views.py** `from .models import Item` to import Item medthod from models class --> now you can access Item model
+    - In the `get_todo_list`function:
+        - `items =Item.object.all()` wich is creates a **query set** of all the database items 
+        - Make a dictionary `context` where key is `'items'` and value is `items`
+- Create the template for user to see the **view**:
+    - **templates/todo/todo_list.html** add the `{{ items }}` in the body **{{}}** are called 
+    - If template(webpage) is refreshed the **value** of the items key is diplayed
+    - Instead of displaying the query set, we ant to display the value and key
+    - go back to html and and add for loop `{% item for items %}` and `{%endfor%}` **%** needed for other than variables
+    - On each loop add one `<tr>` with two cells `<td>`
+    - Add `{% empty %}` in the end before endfor, whatever is added on th html is diplayed if no todo items
 
 ## Codeanywhere Reminders
+- `todo_list.html` todo represents th read operation in CRUD, each operations should have it's own html
+- `{% crf_token %}` = a csrf(cross-site request forgery token), a hidden input field value that verifys that data coming from this todo list app
 
 To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
 
